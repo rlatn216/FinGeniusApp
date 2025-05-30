@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+// Java/Kotlin 생성 패키지 지정
+option java_package = "com.skim.core.datastore";
+option java_multiple_files = true;
+
+// 메시지 정의
+message AccessToken {
+  string access_token = 1;
+  bool is_expired = 2;
+  string cookie = 3;
+  bool has_done_migration_add_cookie = 4;
+}
