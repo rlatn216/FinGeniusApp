@@ -108,18 +108,18 @@ android {
         create("dev") {
             dimension = "SERVER"
             applicationIdSuffix = ".dev"
-            buildConfigField("String", "TEST_BUTTON", "true")
+            buildConfigField("Boolean", "TEST_BUTTON", "true")
         }
         // 내부 개발서버
         create("itest") {
             dimension = "SERVER"
             applicationIdSuffix = ".itest"
-            buildConfigField("String", "TEST_BUTTON", "false")
+            buildConfigField("Boolean", "TEST_BUTTON", "false")
         }
         // 클라우드 운영서버
         create("real") {
             dimension = "SERVER"
-            buildConfigField("String", "TEST_BUTTON", "false")
+            buildConfigField("Boolean", "TEST_BUTTON", "false")
         }
     }
 
