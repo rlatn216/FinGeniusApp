@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="env_name"></string>
+    <string name="name">이름</string>
+
+    <string name="skim_ui_yes">예</string>
+    <string name="skim_ui_no">아니오</string>
+
+    <string name="skim_ui_alert">알림</string>
+    <string name="skim_ui_close">닫기</string>
+    <string name="skim_ui_cancel">취소</string>
+    <string name="skim_ui_confirm">확인</string>
+    <string name="skim_ui_select_date">날짜선택</string>
+    <string name="skim_ui_retry">재시도</string>
+
+    <string name="skim_ui_error_network">네트워크에 연결되어 있지 않습니다.\n네트워크 설정 및 Wi-Fi 연결을 확인해주세요.</string>
+    <string name="skim_ui_expired_session">앱을 장시간 사용하지 않아 앱이 재실행됩니다.\n다시 로그인 후 사용해주세요.</string>
+    <string name="skim_ui_toast_msg_splash_permission_need_title">앱 실행을 위한 권한 필요</string>
+    <string name="skim_ui_toast_msg_splash_permission_denied">권한 거부로 앱을 사용할 수 없습니다.\n[앱 정보]->[권한]에서 모든 권한을 허용해 주세요.</string>
+    <string name="skim_ui_move_to_app_setting">앱 정보로 이동</string>
+    <string name="skim_ui_alert_close_app">앱을 종료하시겠습니까?</string>
+
+    <string name="skim_ui_title_message">FinGeniusApp</string>
+    
+</resources>

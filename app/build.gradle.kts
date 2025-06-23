@@ -19,7 +19,10 @@ android {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = 34
         versionCode = libs.versions.targetSdk.get().toInt()
-        versionName = "1.0"
+        // 버전규칙 : 0.0.00000000
+        // (대형 R&D 시 +1).(소형 R&D 시 +1).(마이너업데이트 시 현재날짜6자리+00[현재날짜가 같을 시 +1])
+        // 임시 POC의 경우 맨끝자리 2자리는 90로 설정(+1씩 늘어감)
+        versionName = "1.1.25061690"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

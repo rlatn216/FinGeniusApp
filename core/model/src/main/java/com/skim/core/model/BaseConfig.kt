@@ -7,4 +7,6 @@ object BaseConfig {
     var ENCRYPT_API = false
     var SERVER_PROTOCOL = ""
     var API_SERVER_URL = ""
+    var VERSION_NAME: String = ""
+    var DEBUG_LOG = true
 }

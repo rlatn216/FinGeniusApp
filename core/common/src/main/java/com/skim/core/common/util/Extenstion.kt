@@ -17,7 +17,7 @@ sealed class FragmentRequest<T>(val key: String, val resultType: Class<out T>) {
 //    object NormalAuthCamera : FragmentRequest<Unit>("normal_camera", Unit::class.java)
 //    object DocCamera : FragmentRequest<Unit>("doc_camera", Unit::class.java)
 //    object PreviewDoc : FragmentRequest<Int>("preview_doc", Int::class.java)
-//    object DatePicker : FragmentRequest<String>("date_picker", String::class.java)
+    object DatePicker : FragmentRequest<String>("date_picker", String::class.java)
 //    object SealCamera : FragmentRequest<ByteArray>("seal_camera", ByteArray::class.java)
 //    object QRResult : FragmentRequest<Boolean>("qr_result", Boolean::class.java)
 //    object Upload : FragmentRequest<Boolean>("upload", Boolean::class.java)
