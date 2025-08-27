@@ -59,7 +59,7 @@ class PathManager(
     }
 
     fun getCacheDir() = "$externalCachePath"
-    fun getRootDir() = "${getCacheDir()}/qservice"
+    fun getRootDir() = "${getCacheDir()}/fingenius"
     fun getGlobalDocumentDir() = "${getCacheDir()}/${GlobalDocument.DIRS}"
     fun getGlobalDocumentDir(dirName: String) = "${getCacheDir()}/${GlobalDocument.DIRS}/$dirName"
     fun getPaperlessMasterDir() = "${getCacheDir()}/paperless_master"

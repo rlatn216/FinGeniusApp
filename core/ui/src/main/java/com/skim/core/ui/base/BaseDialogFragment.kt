@@ -338,18 +338,4 @@ abstract class BaseDialogFragment : AppCompatDialogFragment() {
         baseActivityInterface.ShowFloatingDebug(message = message)
     }
 
-    @Composable
-    protected fun ShowRecord(showAlertDialog: (commonAlertData: CommonAlertData) -> Unit) {
-        val baseActivityInterface = activity as? BaseActivityInterface ?: return
-        baseActivityInterface.ShowRecord {
-            showAlertDialog(
-                CommonAlertData(
-                    it.contentText.toString(),
-                    it.leftBtnText,
-                    it.rightBtnText,
-                    it.onDismissRequest
-                )
-            )
-        }
-    }
 }

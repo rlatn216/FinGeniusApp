@@ -44,7 +44,7 @@ inline fun <reified T : Any> Fragment.setFragmentResultListener(
     request: FragmentRequest<T>,
     crossinline listener: ((result: FragmentResult<T>) -> Unit) // crossinline은 listener 내부의 non-local return(내부꺼만 return)
 ) {
-    parentFragmentManager.setFragmentResultListener(
+    parentFragmentManager.setFragmentResultListener( //  request.key : 고유 식별자
         request.key, this
     ) fragmentResultListener@{ requestKey, bundle ->
 

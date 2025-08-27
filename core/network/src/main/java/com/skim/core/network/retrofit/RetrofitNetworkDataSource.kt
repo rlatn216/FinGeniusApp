@@ -1,6 +1,6 @@
 package com.skim.core.network.retrofit
 
-import com.skim.core.datastore.QServiceDataSource
+import com.skim.core.datastore.MainDataSource
 import com.skim.core.model.ApiErrorCode
 import com.skim.core.model.ApiException
 import com.skim.core.model.ExceptionCode.EXCEPTION_CODE_FAIL_API
@@ -19,7 +19,7 @@ const val SUCCESS = 200
 @Singleton
 class RetrofitNetworkDataSource @Inject constructor(
     private val json: Json,
-    private val qServiceDataSource: QServiceDataSource,
+    private val mainDataSource: MainDataSource,
 ) {
 
     suspend inline fun <reified T> call(request: () -> Response<ApiResponse<T>>): T =
@@ -88,7 +88,7 @@ class RetrofitNetworkDataSource @Inject constructor(
         }
 
         if (code() == 401 && apiResponse.status == ApiErrorCode.ERROR_STATUS_INVALID_TOKEN) {
-            qServiceDataSource.onExpired()
+            mainDataSource.onExpired()
         }
 
         return ApiException(apiResponse.status, apiResponse.message)

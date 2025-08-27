@@ -115,7 +115,7 @@ open class BaseActivityViewModel : ViewModel() {
                         } else {
                             // 특정 조건에 따라 isPaused 상태 변경 및 로그 메시지 추가
                             when {
-                                substringLine.contains("QService") -> {
+                                substringLine.contains("FinGenius") -> {
                                     isAutoPaused = false
                                     addLogMessage(line)
                                 }
@@ -145,7 +145,7 @@ open class BaseActivityViewModel : ViewModel() {
             "BizLogic" -> message.contains("logState") ||
                     message.contains("paperless") ||
                     message.contains("[BIZ]") ||
-                    message.contains("QService")
+                    message.contains("FinGenius")
 
             else -> true
         }

@@ -1,0 +1,25 @@
+package com.skim.core.common.network.di
+
+import com.skim.core.common.network.CommonDispatchers
+import com.skim.core.common.network.Dispatcher
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+
+@Module
+@InstallIn(SingletonComponent::class)
+class DispatcherModule {
+
+    @Provides
+    @Dispatcher(CommonDispatchers.IO)
+    fun providesIODispatcher() : CoroutineDispatcher = Dispatchers.IO
+
+
+    @Provides
+    @Dispatcher(CommonDispatchers.Default)
+    fun providesDefaultDispatcher() : CoroutineDispatcher = Dispatchers.Default
+
+}

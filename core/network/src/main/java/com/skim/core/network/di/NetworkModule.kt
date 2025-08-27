@@ -1,7 +1,7 @@
 package com.skim.core.network.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.skim.core.datastore.QServiceDataSource
+import com.skim.core.datastore.MainDataSource
 import com.skim.core.model.BaseConfig
 import com.skim.core.network.retrofit.interceptor.HeaderInterceptor
 import dagger.Module
@@ -53,11 +53,11 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideOkHttpClient(qServiceDataSource: QServiceDataSource): OkHttpClient {
+    fun provideOkHttpClient(mainDataSource: MainDataSource): OkHttpClient {
         val httpClientBuilder = OkHttpClient.Builder()
             .connectTimeout(BaseConfig.TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(BaseConfig.TIMEOUT, TimeUnit.SECONDS)
-            .addInterceptor(HeaderInterceptor(qServiceDataSource))
+            .addInterceptor(HeaderInterceptor(mainDataSource))
 
         if (BaseConfig.DEBUG) {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
@@ -72,8 +72,8 @@ object NetworkModule {
 //    @Singleton
 //    fun providesBaseNetworkDataSource(
 //        json: Json,
-//        qServiceDataSource: QServiceDataSource,
+//        mainDataSource: MainDataSource,
 //        cryptoService: CryptoService,
 //    ): RetrofitNetworkDataSource =
-//        RetrofitNetworkDataSource(json, qServiceDataSource, cryptoService)
+//        RetrofitNetworkDataSource(json, mainDataSource, cryptoService)
 }

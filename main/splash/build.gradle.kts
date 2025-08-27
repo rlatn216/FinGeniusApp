@@ -3,12 +3,11 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.com.google.dagger.hilt.android)
     alias(libs.plugins.androidx.navigation.safeargs.kotlin)
-    alias(libs.plugins.kotlin.serialization)
     id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.skim.core.common"
+    namespace = "com.skim.main.splash"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -46,15 +45,9 @@ android {
 }
 
 dependencies {
-
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(project(":core:model"))
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
 
     // Compose
     implementation(platform(libs.compose.bom))
@@ -64,9 +57,6 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.activity.compose)
     implementation(libs.lifecycle.runtime.compose)
-
-    // Glide
-    implementation(libs.landscapist.glide)
 
     // Splash Screen
     implementation(libs.core.splashscreen)
@@ -79,6 +69,9 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
-    implementation(libs.kotlinx.serialization.json)
-
+    implementation(project(":core:common"))
+    implementation(project(":core:data"))
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:model"))
+    implementation(project(":core:ui"))
 }

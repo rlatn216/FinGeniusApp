@@ -13,6 +13,7 @@ import android.os.Build
 import android.provider.Settings
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.core.content.ContextCompat
@@ -23,6 +24,7 @@ import com.skim.core.common.state.Left
 import com.skim.core.common.state.Right
 import com.skim.core.designsystem.component.AlertDialog
 import com.skim.core.designsystem.component.BasicDialog
+import com.skim.core.designsystem.component.FloatingDebugLog
 import com.skim.core.designsystem.component.GlobalDialog
 import com.skim.core.ui.R
 import java.util.Locale
@@ -271,37 +273,37 @@ class BaseActivityUtils(
         return true
     }
 
-//    @Composable
-//    fun ShowFloatingDebug(message: String) {
-//        val listState = rememberLazyListState()
-//
-//        FloatingDebugLog(
-//            isShowFloatingLog = baseActivityViewModel.isShowFloatingLog,
-//            mainLogLines = baseActivityViewModel.mainLogLines,
-//            curLogLines = baseActivityViewModel.curLogLines,
-//            listState = listState,
-//            filterType = baseActivityViewModel.filterType,
-//            onFilterType = {
-//                baseActivityViewModel.filterType = it
-//                baseActivityViewModel.updateFilterType(it)
-//                baseActivityViewModel.addLogMessage("\"$it\" 로그로 변경되었습니다. [logState]")
-//            },
-//            isAutoPaused = baseActivityViewModel.isAutoPaused,
-//            isLogPaused = baseActivityViewModel.isLogPaused,
-//            onLogPause = {
-//                baseActivityViewModel.isLogPaused = !baseActivityViewModel.isLogPaused
-//                if (baseActivityViewModel.isLogPaused) baseActivityViewModel.addLogMessage("로그가 중지되었습니다. [logState]")
-//                else baseActivityViewModel.addLogMessage("로그가 시작되었습니다. [logState]")
-//            },
-//            onClear = {
-//                baseActivityViewModel.mainLogLines.clear()
-//                baseActivityViewModel.curLogLines.clear()
-//            },
-//            message = message,
-//            errorMessage = baseActivityViewModel.errorMessage,
-//            onErrorMessage = { baseActivityViewModel.errorMessage = it }
-//        )
-//    }
+    @Composable
+    fun ShowFloatingDebug(message: String) {
+        val listState = rememberLazyListState()
+
+        FloatingDebugLog(
+            isShowFloatingLog = baseActivityViewModel.isShowFloatingLog,
+            mainLogLines = baseActivityViewModel.mainLogLines,
+            curLogLines = baseActivityViewModel.curLogLines,
+            listState = listState,
+            filterType = baseActivityViewModel.filterType,
+            onFilterType = {
+                baseActivityViewModel.filterType = it
+                baseActivityViewModel.updateFilterType(it)
+                baseActivityViewModel.addLogMessage("\"$it\" 로그로 변경되었습니다. [logState]")
+            },
+            isAutoPaused = baseActivityViewModel.isAutoPaused,
+            isLogPaused = baseActivityViewModel.isLogPaused,
+            onLogPause = {
+                baseActivityViewModel.isLogPaused = !baseActivityViewModel.isLogPaused
+                if (baseActivityViewModel.isLogPaused) baseActivityViewModel.addLogMessage("로그가 중지되었습니다. [logState]")
+                else baseActivityViewModel.addLogMessage("로그가 시작되었습니다. [logState]")
+            },
+            onClear = {
+                baseActivityViewModel.mainLogLines.clear()
+                baseActivityViewModel.curLogLines.clear()
+            },
+            message = message,
+            errorMessage = baseActivityViewModel.errorMessage,
+            onErrorMessage = { baseActivityViewModel.errorMessage = it }
+        )
+    }
 
 //    private fun ttsPromptInstall(activity: Activity) {
 //        lateinit var tts: TextToSpeech

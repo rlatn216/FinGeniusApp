@@ -9,4 +9,6 @@ object BaseConfig {
     var API_SERVER_URL = ""
     var VERSION_NAME: String = ""
     var DEBUG_LOG = true
+    var USE_MDM = false
+    var SKIP_CHECK_VERSION = true
 }

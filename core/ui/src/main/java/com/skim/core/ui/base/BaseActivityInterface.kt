@@ -28,6 +28,4 @@ interface BaseActivityInterface {
     fun ShowGlobalDialog(dialogData: CommonDialogData)
     @Composable
     fun ShowFloatingDebug(message: String)
-    @Composable
-    fun ShowRecord(showAlertDialog: (commonDialogData: CommonDialogData) -> Unit)
 }

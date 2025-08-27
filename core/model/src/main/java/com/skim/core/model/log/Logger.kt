@@ -3,7 +3,7 @@ package com.skim.core.model.log
 interface Logger {
 
     companion object {
-        const val TAG = "QService"
+        const val TAG = "FinGenius"
     }
 
     fun v(message: String, tag: String? = TAG)

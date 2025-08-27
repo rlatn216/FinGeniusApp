@@ -163,4 +163,12 @@ dependencies {
 //    implementation(libs.firebase.crashlytics.ktx)
 
     implementation(libs.kotlinx.serialization.json)
+
+    implementation(project(":core:ui"))
+    implementation(project(":core:data"))
+    implementation(project(":core:model"))
+    implementation(project(":core:common"))
+    implementation(project(":core:designsystem"))
+
+    implementation(project(":core:datastore"))
 }

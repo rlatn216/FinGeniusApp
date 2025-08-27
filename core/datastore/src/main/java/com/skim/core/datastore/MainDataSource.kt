@@ -5,7 +5,7 @@ import com.skim.core.common.util.PathManager
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class QServiceDataSource @Inject constructor(
+class MainDataSource @Inject constructor(
     private val accessTokenDataStore: DataStore<AccessToken>,
     private val pathManager: PathManager
 ) {

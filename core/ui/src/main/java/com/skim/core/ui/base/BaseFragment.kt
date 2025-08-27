@@ -224,12 +224,4 @@ abstract class BaseFragment : Fragment() {
 //            DatePickerDialogFragmentDirections.actionGlobalDatePickerDialogFragment(year = year, month = month, day = day, maxDate = maxDate)
 //        )
 //    }
-
-    @Composable
-    protected fun ShowRecord() {
-        val baseActivityInterface = activity as? BaseActivityInterface ?: return
-        baseActivityInterface.ShowRecord {
-            showAlertDialog(it.contentText, it.leftBtnText, it.rightBtnText, it.onDismissRequest)
-        }
-    }
 }
